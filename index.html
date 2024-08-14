@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FDO-startpage</title>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            --text-color: #333;
+            --bg-color: rgba(255, 255, 255, 0.2);
+            --accent-color: #185a9d;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #f0f0f0;
+                --bg-color: rgba(0, 0, 0, 0.2);
+                --accent-color: #43cea2;
+            }
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-gradient);
+            z-index: -1;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 800px;
+            background: var(--bg-color);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="content">
+                <h1>班级wiki百科</h1>
+                <p>隶属于<a href="https://startpage-75o.pages.dev/">自由与多元化促进会（FDO）𖤓</a>和<a href="https://daidai-github-io.pages.dev/">十二班通讯社</a></p>
+                <p>该网页是关于十二班的wiki百科，词条中的内容不代表任何人的立场。你可以向以下邮箱投稿或独立制作文章页面：</p>
+                <ul>
+                    <li><span class="icon">📧</span> guangyinzhong@outlook.com</li>
+                    <li><span class="icon">📧</span> qhljhlj@gmail.com</li>
+                </ul>
+                <h2><span class="icon">📋</span> 目录</h2>
+                <ul>
+                    <li><a href="https://xijp-github-io.pages.dev/">呆呆团民主制条例</a></li>
+                    <p></p>
+                    <li><a href="https://xianfa-github-io.pages.dev/">呆呆国宪法</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function processLinks() {
+            const content = document.querySelector('.content');
+            content.innerHTML = content.innerHTML.replace(/\[link:(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+        }
+        
+        function processLineBreaks() {
+            const content = document.querySelector('.content');
+            content.innerHTML = content.innerHTML.replace(/\\n/g, '<br>');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            processLinks();
+            processLineBreaks();
+        });
+    </script>
+</body>
+</html>
