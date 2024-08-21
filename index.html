@@ -3,70 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wiki</title>
+    <title>班级wiki百科</title>
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
-            --text-color: #333;
-            --bg-color: rgba(255, 255, 255, 0.2);
-            --accent-color: #185a9d;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --text-color: #f0f0f0;
-                --bg-color: rgba(0, 0, 0, 0.2);
-                --accent-color: #43cea2;
-            }
+            --bg-color: #f8f9fa;
+            --content-bg-color: #ffffff;
+            --text-color: #202122;
+            --border-color: #a2a9b1;
+            --link-color: #0645ad;
+            --link-hover-color: #0b0080;
+            --heading-color: #000;
         }
 
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Lato', 'Helvetica', 'Arial', sans-serif;
             color: var(--text-color);
             line-height: 1.6;
-        }
-
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-gradient);
-            z-index: -1;
+            background-color: var(--bg-color);
         }
 
         .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .content-wrapper {
-            width: 100%;
-            max-width: 800px;
-            background: var(--bg-color);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
         }
 
         .content {
-            padding: 40px;
+            background-color: var(--content-bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 2px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+
+        h1, h2 {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            color: var(--heading-color);
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: var(--accent-color);
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-top: 30px;
         }
 
         p {
@@ -74,68 +61,57 @@
         }
 
         a {
-            color: var(--accent-color);
+            color: var(--link-color);
             text-decoration: none;
-            transition: all 0.3s ease;
         }
 
         a:hover {
             text-decoration: underline;
+            color: var(--link-hover-color);
         }
 
         ul {
             list-style-type: none;
-            padding: 0;
+            padding-left: 20px;
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+        }
+
+        .toc-letter {
+            font-weight: bold;
+            margin-top: 10px;
         }
 
         .icon {
             margin-right: 5px;
         }
-
-        @media (max-width: 768px) {
-            .content {
-                padding: 30px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="background"></div>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="content">
-                <h1>班级wiki百科</h1>
-                <p>隶属于<a href="https://startpage-75o.pages.dev/">自由与多元化促进会（FDO）𖤓</a>和<a href="https://daidai-github-io.pages.dev/">十二班通讯社</a></p>
-                <p>该网页是关于十二班的wiki百科，词条中的内容不代表任何人的立场。你可以向以下邮箱投稿或独立制作文章页面：</p>
-                <ul>
-                    <li><span class="icon">📧</span> guangyinzhong@outlook.com</li>
-                    <li><span class="icon">📧</span> qhljhlj@gmail.com</li>
-                </ul>
-                <h2><span class="icon">📋</span> 目录</h2>
-                <ul>
-                    <p>H</p>
-                    <li><a href="https://hurq-github-io.pages.dev/">胡</a>(教师)</li>
-                    <p>L</p>
-                    <li><a href="https://liuzhe.pages.dev/">刘</a>(教师)</li>
-                    <p>M</p>
-                    <li><a href="https://myp-github-io.pages.dev/">穆</a>(教师)</li>
-                    <p></p>
-                    <p>P</p>
-                    <li><a href="https://penny-github-io-7sf.pages.dev/">彭</a>（教师）</li>
-                    <p></p>
-                    <p>S</p>
-                    <li><a href="https://shierban-github-io.pages.dev/">十二班</a>（班集体）</li>
-        
-                </ul>
-            </div>
+        <div class="content">
+            <h1>班级wiki百科</h1>
+            <p>隶属于<a href="https://startpage-75o.pages.dev/">自由与多元化促进会（FDO）𖤓</a>和<a href="https://daidai-github-io.pages.dev/">十二班通讯社</a></p>
+            <p>该网页是关于十二班的wiki百科，词条中的内容不代表任何人的立场。你可以向以下邮箱投稿或独立制作文章页面：</p>
+            <ul>
+                <li><span class="icon">📧</span> guangyinzhong@outlook.com</li>
+                <li><span class="icon">📧</span> qhljhlj@gmail.com</li>
+            </ul>
+            <h2>目录</h2>
+            <ul>
+                <li class="toc-letter">H</li>
+                <li><a href="https://hurq-github-io.pages.dev/">胡</a>（教师）</li>
+                <li class="toc-letter">L</li>
+                <li><a href="https://liuzhe.pages.dev/">刘</a>（教师）</li>
+                <li class="toc-letter">M</li>
+                <li><a href="https://myp-github-io.pages.dev/">穆</a>（教师）</li>
+                <li class="toc-letter">P</li>
+                <li><a href="https://penny-github-io-7sf.pages.dev/">彭</a>（教师）</li>
+                <li class="toc-letter">S</li>
+                <li><a href="https://shierban-github-io.pages.dev/">十二班</a>（班集体）</li>
+            </ul>
         </div>
     </div>
 
